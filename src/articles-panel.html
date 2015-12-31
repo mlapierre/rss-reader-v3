@@ -1,0 +1,14 @@
+<template>
+  <section id="articles">
+    <article repeat.for="article of articles">
+      <header>
+        <h2>${article.title}</h2>
+      </header>
+      <div class="section-wrap">
+        <section class="article-content">
+          ${article.content}
+        </section>
+      </div>
+    </article>
+  </section>
+</template>

@@ -1,0 +1,28 @@
+<template>
+  <section id="feeds-panel">
+    <div id="feeds-header-container">
+      <header>
+        <h2>Subscriptions</h2>
+      </header>
+      <form name="add-feed-form" submit="addSubscription()">
+        <input id="add-subscription" type="url" placeholder="Add subscription...">
+      </form>
+    </div>
+
+    <div id="feeds-tree" >
+      <ol>
+        <li repeat.for="tag of tags">
+          <span id="tag-${tag.id}">${tag.name}</span>
+          <ol>
+            <li repeat.for="feed of tag.feeds">
+            <div class="feed-wrap">
+              <a route-href="route: articles; params.bind: {feedId:feed.ref}" id="feed-${feed.ref}">${feed.title}</a>
+              <span class="unread-count">${feed.unreadCount}</span>
+            </div>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </section>
+</template>
