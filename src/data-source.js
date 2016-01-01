@@ -47,7 +47,7 @@ export class DataSource {
         }];
         resolve(results.filter(result => result.feedRef == feedId)
                        .map(result => result.articles)
-                       .reduce((a, b) => a.concat(b)));
+                       .reduce((a, b) => a.concat(b), []));
         this.isRequesting = false;
       }, latency);
     });

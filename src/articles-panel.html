@@ -1,13 +1,23 @@
 <template>
   <section id="articles">
-    <article repeat.for="article of articles">
+    <article repeat.for="article of articles" id="article_${article.id}">
       <header>
-        <h2>${article.title}</h2>
+        <h2><a href="${article.link}" target="_blank">${article.title}</a></h2>
+        <span>${article.published}</span>
       </header>
       <div class="section-wrap">
         <section class="article-content">
           ${article.content}
         </section>
+        <footer>
+          <form name="add-article-tag-form" trigger.submit="addArticleTag()">
+            <input id="add-article-tag-${article.id}" type="text" placeholder="New tag...">
+          </form>
+          <span class="article_tag" repeat.for="tag of article.tags">
+            ${tag}
+            <img src="images/ic_remove_circle_black_18px.svg" trigger.click="removeArticleTag($event)" />
+          </span>
+        </footer>
       </div>
     </article>
   </section>
