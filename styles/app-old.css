@@ -1,0 +1,82 @@
+body {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.page-host {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  height: calc(100vh - 3em);
+}
+
+articles-panel {
+  flex: 1;
+  overflow: hidden;
+  background-color: #aaaaaa;
+}
+
+articles-panel:hover {
+  overflow-y: scroll;
+}
+
+#articles-view {
+  padding: 1rem;
+}
+
+/* Feeds list */
+feed-list {
+  width: 25rem;
+  overflow: hidden;
+}
+
+feed-list:hover {
+  overflow-y: scroll;
+}
+
+feed-list header {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  margin-bottom: 0.5rem;
+}
+
+feed-list h2 {
+  font-size: 0.9em;
+  padding-left: 1rem;
+  text-decoration: none;
+  color: #305371;
+  margin: 0.25rem 0 0.25rem 0;
+}
+
+feed-list .feed_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed_wrap span {
+  width: 2rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #314F6F;
+  margin-right: 5px;
+  text-align: right;
+}
+
+#feeds_header_container {
+  width: 14.5rem;
+}
+
+#add_subscription {
+  margin: 0 0 0.5rem 1rem;
+  width: 13rem;
+}
+
+#add_subscription.ng-invalid-url {
+  border: 2px solid red;
+}
